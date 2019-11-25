@@ -5,16 +5,18 @@
 
 Final Project of WMAD 202 - Intro to Object Oriented Programming (Java) in CICCC
 
-## Requirements
-
-- Java
-    - JDK 13.0.1
-
 ## How to build & run
 
 TBA
 
-## How to contribute
+## How to develop
+
+### Requirements
+
+- Java
+  - JDK 13.0.1
+- (Gradle)
+  - v6.0.1
 
 ### Setup
 
