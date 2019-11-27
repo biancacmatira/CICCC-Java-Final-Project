@@ -6,27 +6,27 @@ import javafx.scene.Scene;
 import java.util.Deque;
 
 public class TypingGameController {
-  private Player player;
-  private Player[] players;
+  //  private Player player;
+  //  private Player[] players;
   private int timeRemains;
   private Score score;
   private Deque<Word> targetWords;
   private String currentInput;
   private boolean isFinished;
 
-  public void updateTimeRemains() {}
+  public void initialize() {}
 
-  public void displayResult() {}
+  public void pressNewGame() {}
+
+  public void pressMainMenu() {}
 
   public Scene getScene() {
     return null;
   }
 
-  public void initialize() {}
+  public void updateTimeRemains() {}
 
   public void hitKey() {}
 
-  public void pressNewGame() {}
-
-  public void pressMainMenu() {}
+  public void displayResult() {}
 }
