@@ -1,9 +1,8 @@
 package ca.ciccc.typinggame.controller;
 
 import ca.ciccc.typinggame.model.Word;
-import javafx.scene.Scene;
-
 import java.util.Deque;
+import javafx.scene.Scene;
 
 public class TypingGameController {
   //  private Player player;
