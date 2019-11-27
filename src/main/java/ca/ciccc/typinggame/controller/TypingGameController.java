@@ -13,19 +13,33 @@ public class TypingGameController {
   private String currentInput;
   private boolean isFinished;
 
-  public void initialize() {}
+  public void initialize() {
+    this.isFinished = false;
+    this.timeRemains = 60;
+  }
 
-  public void pressNewGame() {}
+  public void pressNewGame() {
+    // TODO: initialize the game and call displayGameScene()
+  }
 
-  public void pressMainMenu() {}
+  public void pressMainMenu() {
+    // TODO: initialize the game and call displayStartScene()
+  }
 
   public Scene getScene() {
+    // TODO: get the Scene
     return null;
   }
 
-  public void updateTimeRemains() {}
+  public void updateTimeRemains() {
+    // TODO: update the time every second
+  }
 
-  public void hitKey() {}
+  public void hitKey() {
+    // TODO: check the input value
+  }
 
-  public void displayResult() {}
+  public void displayResult() {
+    // TODO: display the result page
+  }
 }
