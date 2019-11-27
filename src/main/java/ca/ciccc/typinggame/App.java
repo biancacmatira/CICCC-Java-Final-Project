@@ -22,9 +22,15 @@ public class App extends Application {
     launch();
   }
 
-  public void displayStartScene() {}
+  public void displayStartScene() {
+    // TODO: go to start page
+  }
 
-  public void displayGameScene() {}
+  public void displayGameScene() {
+    // TODO: go to game page
+  }
 
-  public void exit() {}
+  public void exit() {
+    // TODO: close window
+  }
 }
