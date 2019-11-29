@@ -1,7 +1,6 @@
 package ca.ciccc.typinggame.model;
 
 import java.io.*;
-import java.lang.reflect.Array;
 import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
@@ -49,7 +48,6 @@ public class WordGenerator {
      *
      * @param length length of each word
      */
-    // (int) Math.random() * wordList.get(length).size()
     Random rand = new Random();
     for (int i = 0; i < length; i++) {
       if (wordList.get(length - i).size() != 0) {

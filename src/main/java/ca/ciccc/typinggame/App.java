@@ -22,7 +22,6 @@ public class App extends Application {
     try {
       WordGenerator wordGenerator =
           new WordGenerator(getClass().getResource("../../../wordlist.txt").toURI());
-      wordGenerator.generateWord(15);
     } catch (URISyntaxException e) {
       e.printStackTrace();
     }
