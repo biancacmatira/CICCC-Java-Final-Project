@@ -55,16 +55,4 @@ public class App extends Application {
     Platform.exit();
     System.exit(0);
   }
-
-  public void displayStartScene() {
-    // TODO: go to start page
-  }
-
-  public void displayGameScene() {
-    // TODO: go to game page
-  }
-
-  public void exit() {
-    // TODO: close window
-  }
 }
