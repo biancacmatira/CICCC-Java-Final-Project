@@ -21,4 +21,16 @@ public class App extends Application {
   public static void main(String[] args) {
     launch();
   }
+
+  public void displayStartScene() {
+    // TODO: go to start page
+  }
+
+  public void displayGameScene() {
+    // TODO: go to game page
+  }
+
+  public void exit() {
+    // TODO: close window
+  }
 }
