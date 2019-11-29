@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="ca.ciccc.typinggame.controller.StartController"
+            fx:id="startScene"
+            styleClass="start-bg">
+
+    <Button fx:id="startButton"
+            styleClass="start-btn"
+            onAction="#pressStart"
+            layoutX="210"
+            layoutY="240"
+    />
+
+    <Button fx:id="creditsButton"
+            styleClass="credits-btn"
+            onAction="#pressCredits"
+            layoutX="210"
+            layoutY="290"
+    />
+
+    <Button fx:id="exitButton"
+            styleClass="exit-btn"
+            onAction="#pressExit"
+            layoutX="210"
+            layoutY="340"
+    />
+
+</AnchorPane>
