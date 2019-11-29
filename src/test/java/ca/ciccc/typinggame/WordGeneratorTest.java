@@ -4,9 +4,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import ca.ciccc.typinggame.model.Word;
 import ca.ciccc.typinggame.model.WordGenerator;
-import org.junit.jupiter.api.Test;
-
 import java.net.URISyntaxException;
+import org.junit.jupiter.api.Test;
 
 public class WordGeneratorTest {
 

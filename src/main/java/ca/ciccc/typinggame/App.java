@@ -21,7 +21,6 @@ import javafx.scene.layout.BackgroundSize;
 import javafx.scene.layout.HBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import javafx.scene.paint.Color;
 
 public class App extends Application {
   private static Stage primaryStage;
@@ -340,7 +339,7 @@ public class App extends Application {
       controller.setResultScore(resutlScore);
       controller.setResultBox(ResultBox, ResultBox2);
       controller.setTextGroup(textGroup);
-      controller.setStars(new ImageView[]{ivStars0,ivStars1,ivStars2,ivStars3});
+      controller.setStars(new ImageView[] {ivStars0, ivStars1, ivStars2, ivStars3});
 
       primaryStage.setScene(currentScene);
     } catch (IOException e) {
