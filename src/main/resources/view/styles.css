@@ -58,3 +58,83 @@
     -fx-pref-height:40px;
 }
 
+.text {
+    -fx-font-family: "Arial Rounded MT Bold", "sans-serif";
+    -fx-text-alignment: center;
+}
+
+.status-text {
+    -fx-font-size: 24px;
+    -fx-pref-width: 60px;
+    -fx-pref-height: 24px;
+}
+
+#timeFrame {
+    -fx-translate-x: 80;
+    -fx-translate-y: 28;
+}
+
+#scoreFrame {
+    -fx-translate-x: 550;
+    -fx-translate-y: 28;
+}
+
+.word-text {
+    -fx-font-size: 15px;
+    -fx-pref-width: 136px;
+    -fx-pref-height: 15px;
+}
+
+#wordFrame3 {
+    -fx-translate-x: 242;
+    -fx-translate-y: 105;
+}
+
+#wordFrame2 {
+    -fx-translate-x: 242;
+    -fx-translate-y: 141;
+}
+
+#wordFrame1 {
+    -fx-translate-x: 242;
+    -fx-translate-y: 177;
+}
+
+#inputScrollPane > .viewport {
+    -fx-background-color: transparent;
+}
+
+#inputScrollPane {
+    -fx-font-size: 18px;
+    -fx-pref-width: 180px;
+    -fx-pref-height: 18px;
+    -fx-translate-x: 220;
+    -fx-translate-y: 438;
+    -fx-background-color: transparent;
+    -fx-border: 0;
+}
+
+#inputFrame Text {
+    -fx-fill: white;
+}
+
+.result-text {
+    -fx-font-size: 42px;
+    -fx-fill: #407642;
+    -fx-translate-x: 230;
+    -fx-translate-y: 108;
+}
+
+.result-score-text {
+    -fx-font-size: 20px;
+    -fx-fill: #454545;
+    -fx-translate-x: 235;
+    -fx-translate-y: 205;
+}
+
+.result-score {
+    -fx-font-size: 32px;
+    -fx-fill: #407642;
+    -fx-translate-x: 340;
+    -fx-translate-y: 208;
+}
