@@ -34,8 +34,7 @@ public class App extends Application {
 
   public void setStartScene() {
     try {
-      
-      wordGenerator =
+      WordGenerator wordGenerator =
           new WordGenerator(getClass().getResource("../../../wordlist.txt").toURI());
     } catch (URISyntaxException e) {
       e.printStackTrace();
