@@ -23,6 +23,7 @@ public class App extends Application {
   @Override
   public void start(Stage startStage) {
     primaryStage = startStage;
+    primaryStage.setResizable(false);
     setStartScene();
     primaryStage.show();
   }
