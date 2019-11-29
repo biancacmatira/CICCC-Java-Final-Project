@@ -1,11 +1,8 @@
 package ca.ciccc.typinggame;
 
-import java.awt.*;
 import java.io.IOException;
 import javafx.application.Application;
 import javafx.application.Platform;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.scene.Group;
@@ -14,8 +11,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.HBox;
+import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
 public class App extends Application {
@@ -150,6 +146,14 @@ public class App extends Application {
       ivBlock3.setTranslateX(235);
       ivBlock3.setTranslateY(96);
 
+      ImageView ivBlock4 = new ImageView(block1);
+      ivBlock4.setImage(block1);
+      ivBlock4.setFitWidth(150);
+      ivBlock4.setPreserveRatio(true);
+      ivBlock4.setTranslateX(235);
+      ivBlock4.setTranslateY(90);
+      ivBlock4.setRotate(3);
+
       Image block2 = new Image("view/images/game-block2.png");
       ImageView ivBlockBroken1 = new ImageView(block2);
       ivBlockBroken1.setImage(block2);
@@ -166,17 +170,117 @@ public class App extends Application {
       ivBlockBroken2.setTranslateX(235);
       ivBlockBroken2.setTranslateY(175);
 
+      Image resultImg = new Image("view/images/result-overlay.png", 640, 512, true, false);
+      BackgroundImage resultBgImg =
+          new BackgroundImage(
+              resultImg,
+              BackgroundRepeat.NO_REPEAT,
+              BackgroundRepeat.NO_REPEAT,
+              BackgroundPosition.CENTER,
+              BackgroundSize.DEFAULT);
+      Background resultBg = new Background(resultBgImg);
+
+      Image newGame =
+          new Image(
+              getClass().getResource("../../../view/images/result-btn_newgame1.png").toString());
+      ImageView ivNewGame = new ImageView(newGame);
+      ivNewGame.setImage(newGame);
+      ivNewGame.setFitWidth(215);
+      ivNewGame.setPreserveRatio(true);
+
+      Button newGameBtn = new Button();
+      newGameBtn.setGraphic(ivNewGame);
+      newGameBtn.setStyle("-fx-background-color: transparent; -fx-text-fill: white;");
+      newGameBtn.setPadding(Insets.EMPTY);
+      newGameBtn.setTranslateX(213);
+      newGameBtn.setTranslateY(275);
+      newGameBtn.setOnAction(e -> setGameScene());
+
+      Image mainMenu =
+          new Image(
+              getClass().getResource("../../../view/images/result-btn_mainmenu1.png").toString());
+      ImageView ivMainMenu = new ImageView(mainMenu);
+      ivMainMenu.setImage(mainMenu);
+      ivMainMenu.setFitWidth(215);
+      ivMainMenu.setPreserveRatio(true);
+
+      Button mainMenuBtn = new Button();
+      mainMenuBtn.setGraphic(ivMainMenu);
+      mainMenuBtn.setStyle("-fx-background-color: transparent; -fx-text-fill: white;");
+      mainMenuBtn.setPadding(Insets.EMPTY);
+      mainMenuBtn.setTranslateX(2);
+      mainMenuBtn.setTranslateY(382);
+      mainMenuBtn.setOnAction(e -> setStartScene());
+
+      Image chains =
+          new Image(getClass().getResource("../../../view/images/result-chains.png").toString());
+      ImageView ivChains1 = new ImageView(chains);
+      ivChains1.setImage(chains);
+      ivChains1.setFitWidth(158);
+      ivChains1.setPreserveRatio(true);
+      ivChains1.setTranslateX(-183);
+      ivChains1.setTranslateY(215);
+
+      Image stars0 =
+          new Image(getClass().getResource("../../../view/images/result-stars_0.png").toString());
+      ImageView ivStars0 = new ImageView(stars0);
+      ivStars0.setImage(stars0);
+      ivStars0.setFitWidth(150);
+      ivStars0.setPreserveRatio(true);
+      ivStars0.setTranslateX(245);
+      ivStars0.setTranslateY(110);
+
+      Image stars1 =
+          new Image(getClass().getResource("../../../view/images/result-stars_1.png").toString());
+      ImageView ivStars1 = new ImageView(stars1);
+      ivStars1.setImage(stars1);
+      ivStars1.setFitWidth(150);
+      ivStars1.setPreserveRatio(true);
+      ivStars1.setTranslateX(245);
+      ivStars1.setTranslateY(110);
+
+      Image stars2 =
+          new Image(getClass().getResource("../../../view/images/result-stars_2.png").toString());
+      ImageView ivStars2 = new ImageView(stars2);
+      ivStars2.setImage(stars2);
+      ivStars2.setFitWidth(150);
+      ivStars2.setPreserveRatio(true);
+      ivStars2.setTranslateX(245);
+      ivStars2.setTranslateY(110);
+
+      Image stars3 =
+          new Image(getClass().getResource("../../../view/images/result-stars_3.png").toString());
+      ImageView ivStars3 = new ImageView(stars3);
+      ivStars3.setImage(stars3);
+      ivStars3.setFitWidth(150);
+      ivStars3.setPreserveRatio(true);
+      ivStars3.setTranslateX(245);
+      ivStars3.setTranslateY(110);
+
       Group gameGroup = new Group();
-      HBox box = new HBox();
-      box.getChildren().add(ivTime);
-      box.getChildren().add(ivScore);
-      gameGroup.getChildren().add(box);
+      HBox TimeScoreBox = new HBox();
+      TimeScoreBox.getChildren().add(ivTime);
+      TimeScoreBox.getChildren().add(ivScore);
+      gameGroup.getChildren().add(TimeScoreBox);
+      HBox ResultBox = new HBox();
+      ResultBox.setPrefSize(640, 512);
+      ResultBox.setBackground(resultBg);
+      ResultBox.getChildren().add(newGameBtn);
+      ResultBox.getChildren().add(mainMenuBtn);
+      ResultBox.getChildren().add(ivChains1);
+      HBox ResultBox2 = new HBox();
+      //      ResultBox2.getChildren().add(ivStars0);
+      //      ResultBox2.getChildren().add(ivStars1);
+      //      ResultBox2.getChildren().add(ivStars2);
+      ResultBox2.getChildren().add(ivStars3);
       //      gameGroup.getChildren().add(ivBlockBroken1);
       //      gameGroup.getChildren().add(ivBlockBroken2);
       gameGroup.getChildren().add(ivBlock1);
-      gameGroup.getChildren().add(ivChar1);
       gameGroup.getChildren().add(ivBlock2);
       gameGroup.getChildren().add(ivBlock3);
+      //      gameGroup.getChildren().add(ivBlock4);
+      gameGroup.getChildren().add(ivChar1);
+      // if we will just use fixed 3 words in the screen, we will not need these character versions
       //      gameGroup.getChildren().add(ivChar2);
       //      gameGroup.getChildren().add(ivChar3);
       //      gameGroup.getChildren().add(ivChar4);
@@ -184,6 +288,8 @@ public class App extends Application {
       //      gameGroup.getChildren().add(ivSling2);
       //      gameGroup.getChildren().add(ivSling3);
       //      gameGroup.getChildren().add(ivSling4);
+      gameGroup.getChildren().add(ResultBox);
+      gameGroup.getChildren().add(ResultBox2);
 
       AnchorPane root = FXMLLoader.load(getClass().getResource("../../../view/game.fxml"));
       root.getChildren().add(gameGroup);
