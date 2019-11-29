@@ -12,6 +12,6 @@ public class Word {
   }
 
   public boolean checkInput(String str) {
-    return this.str == str;
+    return this.str.equals(str);
   }
 }

@@ -10,7 +10,7 @@ import javafx.scene.control.Button;
 public class StartController implements Initializable {
   @FXML private Button startButton; // id
   @FXML private Button howToPlayButton; // id
-  @FXML private javafx.scene.control.Button exitButton; // id
+  @FXML private Button exitButton; // id
 
   @FXML
   public void pressStart() {

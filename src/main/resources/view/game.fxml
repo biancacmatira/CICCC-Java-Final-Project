@@ -1,19 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-
-<?import javafx.scene.layout.*?>
-
+<?import javafx.scene.control.*?>
 <?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.TextFlow?>
+
 <AnchorPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="ca.ciccc.typinggame.controller.TypingGameController"
             fx:id="gameScene"
             styleClass="game-bg">
-
-    <ImageView fx:id="ivScore"
-    />
-
-    <ImageView fx:id="ivTime"
-    />
-
+    <children>
+        <TextFlow fx:id="timeFrame"
+                  styleClass="text, status-text"
+        />
+        <TextFlow fx:id="scoreFrame"
+                  styleClass="text, status-text"
+        />
+        <TextFlow fx:id="wordFrame3"
+                  styleClass="text, word-text"
+        />
+        <TextFlow fx:id="wordFrame2"
+                  styleClass="text, word-text"
+        />
+        <TextFlow fx:id="wordFrame1"
+                  styleClass="text, word-text"
+        />
+        <ScrollPane fx:id="inputScrollPane">
+            <content>
+                <TextFlow fx:id="inputFrame"
+                          styleClass="text"
+                />
+            </content>
+        </ScrollPane>
+    </children>
 </AnchorPane>
