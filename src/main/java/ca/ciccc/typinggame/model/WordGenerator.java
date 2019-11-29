@@ -9,7 +9,6 @@ import java.util.Random;
 public class WordGenerator {
   private List<List<String>> wordList;
   private final int INITIALIZE_NUM = 10;
-  private String str;
 
   public WordGenerator(URI location) {
     wordList = new ArrayList<List<String>>();
@@ -42,21 +41,21 @@ public class WordGenerator {
     this.wordList = wordList;
   }
 
-  public Word generateWord(int length) {
-    /**
-     * TODO: read text file to load words list. add each word to wordList.
-     *
-     * @param length length of each word
-     */
+  public Word generateWord(int length, int count) {
     if (length == 0) return new Word("");
-
     Random rand = new Random();
-    for (int i = 0; i < length; i++) {
-      if (wordList.get(length - i).size() != 0) {
-        str = wordList.get(length - i).get(rand.nextInt(wordList.get(length - i).size()));
-        break;
-      }
+    String str = "";
+
+    if (length >= wordList.size() || wordList.get(length).size() < count) {
+      int i;
+      do {
+        i = rand.nextInt(wordList.size());
+      } while (wordList.get(i).size() == 0);
+      str = wordList.get(i).get(rand.nextInt(wordList.get(i).size()));
+    } else {
+      str = wordList.get(length).get(rand.nextInt(wordList.get(length).size()));
     }
+
     Word word = new Word(str);
     return word;
   }

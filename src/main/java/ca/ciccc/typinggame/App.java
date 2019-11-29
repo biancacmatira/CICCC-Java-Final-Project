@@ -1,8 +1,7 @@
 package ca.ciccc.typinggame;
 
-import ca.ciccc.typinggame.model.WordGenerator;
+import ca.ciccc.typinggame.controller.TypingGameController;
 import java.io.IOException;
-import java.net.URISyntaxException;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
@@ -13,11 +12,20 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.*;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundImage;
+import javafx.scene.layout.BackgroundPosition;
+import javafx.scene.layout.BackgroundRepeat;
+import javafx.scene.layout.BackgroundSize;
+import javafx.scene.layout.HBox;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import javafx.scene.paint.Color;
 
 public class App extends Application {
-  public static Stage primaryStage;
+  private static Stage primaryStage;
+  private static Scene currentScene;
 
   public static void main(String[] args) {
     launch();
@@ -33,16 +41,10 @@ public class App extends Application {
 
   public void setStartScene() {
     try {
-      WordGenerator wordGenerator =
-          new WordGenerator(getClass().getResource("../../../wordlist.txt").toURI());
-    } catch (URISyntaxException e) {
-      e.printStackTrace();
-    }
-    try {
       Parent root = FXMLLoader.load(getClass().getResource("../../../view/main.fxml"));
-      Scene scene = new Scene(root, 640, 512);
-      scene.getStylesheets().add("view/styles.css");
-      primaryStage.setScene(scene);
+      currentScene = new Scene(root, 640, 512);
+      currentScene.getStylesheets().add("view/styles.css");
+      primaryStage.setScene(currentScene);
     } catch (IOException e) {
       e.printStackTrace();
     }
@@ -236,7 +238,7 @@ public class App extends Application {
       ivStars0.setFitWidth(150);
       ivStars0.setPreserveRatio(true);
       ivStars0.setTranslateX(245);
-      ivStars0.setTranslateY(110);
+      ivStars0.setTranslateY(120);
 
       Image stars1 =
           new Image(getClass().getResource("../../../view/images/result-stars_1.png").toString());
@@ -245,7 +247,7 @@ public class App extends Application {
       ivStars1.setFitWidth(150);
       ivStars1.setPreserveRatio(true);
       ivStars1.setTranslateX(245);
-      ivStars1.setTranslateY(110);
+      ivStars1.setTranslateY(115);
 
       Image stars2 =
           new Image(getClass().getResource("../../../view/images/result-stars_2.png").toString());
@@ -254,7 +256,7 @@ public class App extends Application {
       ivStars2.setFitWidth(150);
       ivStars2.setPreserveRatio(true);
       ivStars2.setTranslateX(245);
-      ivStars2.setTranslateY(110);
+      ivStars2.setTranslateY(115);
 
       Image stars3 =
           new Image(getClass().getResource("../../../view/images/result-stars_3.png").toString());
@@ -263,7 +265,7 @@ public class App extends Application {
       ivStars3.setFitWidth(150);
       ivStars3.setPreserveRatio(true);
       ivStars3.setTranslateX(245);
-      ivStars3.setTranslateY(110);
+      ivStars3.setTranslateY(115);
 
       Group gameGroup = new Group();
       HBox TimeScoreBox = new HBox();
@@ -277,10 +279,10 @@ public class App extends Application {
       ResultBox.getChildren().add(mainMenuBtn);
       ResultBox.getChildren().add(ivChains1);
       HBox ResultBox2 = new HBox();
-      //      ResultBox2.getChildren().add(ivStars0);
-      //      ResultBox2.getChildren().add(ivStars1);
-      //      ResultBox2.getChildren().add(ivStars2);
-      ResultBox2.getChildren().add(ivStars3);
+      // ResultBox2.getChildren().add(ivStars0);
+      // ResultBox2.getChildren().add(ivStars1);
+      // ResultBox2.getChildren().add(ivStars2);
+      // ResultBox2.getChildren().add(ivStars3);
       //      gameGroup.getChildren().add(ivBlockBroken1);
       //      gameGroup.getChildren().add(ivBlockBroken2);
       gameGroup.getChildren().add(ivBlock1);
@@ -296,15 +298,51 @@ public class App extends Application {
       //      gameGroup.getChildren().add(ivSling2);
       //      gameGroup.getChildren().add(ivSling3);
       //      gameGroup.getChildren().add(ivSling4);
-      gameGroup.getChildren().add(ResultBox);
-      gameGroup.getChildren().add(ResultBox2);
+      // gameGroup.getChildren().add(ResultBox);
+      // gameGroup.getChildren().add(ResultBox2);
 
-      AnchorPane root = FXMLLoader.load(getClass().getResource("../../../view/game.fxml"));
-      root.getChildren().add(gameGroup);
-      Scene scene = new Scene(root, 640, 512);
-      scene.getStylesheets().add("view/styles.css");
-      primaryStage.setScene(scene);
+      FXMLLoader loader = new FXMLLoader(getClass().getResource("../../../view/game.fxml"));
+      AnchorPane root = loader.load();
+      root.getChildren().add(0, gameGroup);
+      root.getChildren().add(ResultBox);
+      root.getChildren().add(ResultBox2);
 
+      Text resultMsg = new Text("Time Up!");
+      resultMsg.getStyleClass().add("text");
+      resultMsg.getStyleClass().add("result-text");
+      // root.getChildren().add(resultMsg);
+
+      Text scoreLabel = new Text("SCORE: ");
+      scoreLabel.getStyleClass().add("text");
+      scoreLabel.getStyleClass().add("result-score-text");
+      // root.getChildren().add(scoreLabel);
+
+      Text resutlScore = new Text();
+      resutlScore.getStyleClass().add("text");
+      resutlScore.getStyleClass().add("result-score");
+      // root.getChildren().add(resutlScore);
+
+      ResultBox.setVisible(false);
+      ResultBox2.setVisible(false);
+
+      Group textGroup = new Group();
+      textGroup.getChildren().add(resultMsg);
+      textGroup.getChildren().add(scoreLabel);
+      textGroup.getChildren().add(resutlScore);
+      textGroup.setVisible(false);
+      root.getChildren().add(textGroup);
+
+      currentScene = new Scene(root, 640, 512);
+      currentScene.getStylesheets().add("view/styles.css");
+      TypingGameController controller = (TypingGameController) loader.getController();
+      controller.setupEventListener(currentScene);
+
+      controller.setResultScore(resutlScore);
+      controller.setResultBox(ResultBox, ResultBox2);
+      controller.setTextGroup(textGroup);
+      controller.setStars(new ImageView[]{ivStars0,ivStars1,ivStars2,ivStars3});
+
+      primaryStage.setScene(currentScene);
     } catch (IOException e) {
       e.printStackTrace();
     }
@@ -344,7 +382,6 @@ public class App extends Application {
       Scene scene = new Scene(root, 640, 512);
       scene.getStylesheets().add("view/styles.css");
       primaryStage.setScene(scene);
-
     } catch (IOException e) {
       e.printStackTrace();
     }
