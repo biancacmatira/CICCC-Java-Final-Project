@@ -2,12 +2,7 @@ package ca.ciccc.typinggame.controller;
 
 import ca.ciccc.typinggame.model.Word;
 import java.util.Deque;
-
-import javafx.scene.Group;
 import javafx.scene.Scene;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-import javafx.scene.layout.HBox;
 
 public class TypingGameController {
   //  private Player player;
@@ -24,11 +19,11 @@ public class TypingGameController {
   }
 
   public void pressNewGame() {
-    // TODO: initialize the game and call displayGameScene()
+    // TODO: initialize the game and call setGameScene()
   }
 
   public void pressMainMenu() {
-    // TODO: initialize the game and call displayStartScene()
+    // TODO: initialize the game and call setStartScene()
   }
 
   public Scene getScene() {
@@ -44,7 +39,7 @@ public class TypingGameController {
     // TODO: check the input value
   }
 
-  public void displayResult() {
-    // TODO: display the result page
+  public void setResult() {
+    // TODO: set the result page
   }
 }
