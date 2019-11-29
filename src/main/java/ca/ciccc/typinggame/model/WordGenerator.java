@@ -42,6 +42,7 @@ public class WordGenerator {
   }
 
   public Word generateWord(int length, int count) {
+    if (length == 0) return new Word("");
     Random rand = new Random();
     String str = "";
 
