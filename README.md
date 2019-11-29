@@ -5,9 +5,9 @@
 
 Final Project of WMAD 202 - Intro to Object Oriented Programming (Java) in CICCC
 
-## How to build & run
+## How to run
 
-TBA
+`gradlew run`
 
 ## How to develop
 
@@ -20,7 +20,21 @@ TBA
 
 ### Setup
 
-TBA
+#### Use EditorConfig
+
+https://editorconfig.org/
+
+For IntelliJ IDEA, see https://www.jetbrains.com/help/idea/configuring-code-style.html#editorconfig
+
+#### Format code using google-java-format
+
+https://github.com/google/google-java-format
+
+For IntelliJ IDEA, see https://github.com/google/google-java-format#intellij-android-studio-and-other-jetbrains-ides
+
+### Test
+
+`gradlew test`
 
 ## Members
 
