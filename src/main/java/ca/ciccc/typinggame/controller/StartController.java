@@ -1,19 +1,40 @@
 package ca.ciccc.typinggame.controller;
 
-public class StartController {
+import ca.ciccc.typinggame.App;
+import javafx.application.Platform;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class StartController implements Initializable {
+  @FXML App app;
+  @FXML private Button startButton; // id
+  @FXML private Button creditsButton; // id
+  @FXML private javafx.scene.control.Button exitButton; // id
+
+  @FXML
   public void pressStart() {
     // TODO: go to game page
   }
 
+  @FXML
   public void pressCredits() {
     // TODO: go to credits page
   }
 
-  public void pressExit() {
-    // TODO: close window
+  @FXML
+  private void pressExit() {
+    Platform.exit();
+    System.exit(0);
   }
 
-  public void getScene() {
-    // TODO: return Scene
+  @Override
+  public void initialize(URL location, ResourceBundle resources) {
+    startButton = new Button();
+    creditsButton = new Button();
+    exitButton = new Button();
   }
 }
