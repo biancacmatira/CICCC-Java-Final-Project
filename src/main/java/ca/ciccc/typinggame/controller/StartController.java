@@ -1,13 +1,12 @@
 package ca.ciccc.typinggame.controller;
 
 import ca.ciccc.typinggame.App;
+import java.net.URL;
+import java.util.ResourceBundle;
 import javafx.application.Platform;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import java.net.URL;
-import java.util.ResourceBundle;
 
 public class StartController implements Initializable {
   @FXML App app;
