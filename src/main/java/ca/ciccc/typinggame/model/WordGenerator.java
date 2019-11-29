@@ -48,6 +48,8 @@ public class WordGenerator {
      *
      * @param length length of each word
      */
+    if (length == 0) return new Word("");
+
     Random rand = new Random();
     for (int i = 0; i < length; i++) {
       if (wordList.get(length - i).size() != 0) {
