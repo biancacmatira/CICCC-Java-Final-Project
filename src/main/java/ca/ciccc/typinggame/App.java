@@ -1,5 +1,6 @@
 package ca.ciccc.typinggame;
 
+import ca.ciccc.typinggame.model.WordGenerator;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
@@ -9,6 +10,7 @@ import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URISyntaxException;
 
 public class App extends Application {
   public static void main(String[] args) {
@@ -17,6 +19,13 @@ public class App extends Application {
 
   @Override
   public void start(Stage startStage) {
+    try {
+      WordGenerator wordGenerator =
+          new WordGenerator(getClass().getResource("../../../wordlist.txt").toURI());
+      wordGenerator.generateWord(15);
+    } catch (URISyntaxException e) {
+      e.printStackTrace();
+    }
     try {
       Parent root = FXMLLoader.load(getClass().getResource("../../../view/main.fxml"));
       Scene scene = new Scene(root, 640, 512);
@@ -54,17 +63,5 @@ public class App extends Application {
   public void exit() {
     Platform.exit();
     System.exit(0);
-  }
-
-  public void displayStartScene() {
-    // TODO: go to start page
-  }
-
-  public void displayGameScene() {
-    // TODO: go to game page
-  }
-
-  public void exit() {
-    // TODO: close window
   }
 }

@@ -8,7 +8,7 @@ public class TypingGameController {
   //  private Player player;
   //  private Player[] players;
   private int timeRemains;
-  private Score score;
+  //  private Score score;
   private Deque<Word> targetWords;
   private String currentInput;
   private boolean isFinished;
