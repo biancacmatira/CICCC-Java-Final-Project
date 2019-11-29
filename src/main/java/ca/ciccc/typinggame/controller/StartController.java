@@ -4,8 +4,14 @@ import ca.ciccc.typinggame.App;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -16,9 +22,17 @@ public class StartController implements Initializable {
   @FXML private javafx.scene.control.Button exitButton; // id
 
   @FXML
-  public void pressStart() {
-    // TODO: go to game page
+  public void pressStart(ActionEvent actionEvent) {
+    startButton.getEventDispatcher();
+    app.displayGameScene();
   }
+
+  //  startButton.setOnAction(new EventHandler()) {
+  //    @Override
+  //    public void handle(ActionEvent actionEvent) {
+  //      app.displayGameScene();
+  //    }
+  //  });
 
   @FXML
   public void pressCredits() {

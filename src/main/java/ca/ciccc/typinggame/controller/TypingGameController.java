@@ -2,13 +2,18 @@ package ca.ciccc.typinggame.controller;
 
 import ca.ciccc.typinggame.model.Word;
 import java.util.Deque;
+
+import javafx.scene.Group;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.HBox;
 
 public class TypingGameController {
   //  private Player player;
   //  private Player[] players;
   private int timeRemains;
-  private Score score;
+  //  private Score score;
   private Deque<Word> targetWords;
   private String currentInput;
   private boolean isFinished;
