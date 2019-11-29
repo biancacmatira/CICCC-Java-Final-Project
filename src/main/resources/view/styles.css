@@ -26,16 +26,16 @@
     -fx-pref-height:40px;
 }
 
-.credits-btn{
-    -fx-background-image: url("images/start-btn_credits1.png");
+.howToPlay-btn{
+    -fx-background-image: url("images/start-btn_htp1.png");
     -fx-background-color: transparent;
     -fx-background-size: 220px;
     -fx-pref-width: 220px;
     -fx-pref-height:40px;
 }
 
-.credits-btn-clicked{
-    -fx-background-image: url("images/start-btn_credits2.png");
+.howToPlay-btn-clicked{
+    -fx-background-image: url("images/start-btn_htp2.png");
     -fx-background-color: transparent;
     -fx-background-size: 220px;
     -fx-pref-width: 220px;

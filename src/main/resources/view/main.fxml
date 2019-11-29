@@ -16,9 +16,9 @@
             layoutY="240"
     />
 
-    <Button fx:id="creditsButton"
-            styleClass="credits-btn"
-            onAction="#pressCredits"
+    <Button fx:id="howToPlayButton"
+            styleClass="howToPlay-btn"
+            onAction="#pressHowToPlay"
             layoutX="210"
             layoutY="290"
     />
@@ -29,5 +29,6 @@
             layoutX="210"
             layoutY="340"
     />
+
 
 </AnchorPane>

@@ -41,20 +41,6 @@ public class App extends Application {
 
   public void setGameScene() {
     try {
-      //    Image sling1 = new Image("view/images/game-sling1.png");
-      //    ImageView iv1 = new ImageView(sling1);
-      //    iv1.setImage(sling1);
-      //    iv1.setFitWidth(200);
-      //    iv1.setPreserveRatio(true);
-      //    iv1.setTranslateX(210);
-      //    iv1.setTranslateY(328);
-      //
-      //    HBox hbox = new HBox(iv1);
-      //
-      //    Scene scene = new Scene(hbox, 640, 512);
-      //    startStage.setScene(scene);
-      //    startStage.show();
-
       Image time =
           new Image(getClass().getResource("../../../view/images/game-time.png").toString());
       ImageView ivTime = new ImageView(time);
@@ -73,11 +59,20 @@ public class App extends Application {
       ivScore.setTranslateX(340);
       ivScore.setTranslateY(-5);
 
+      Image sling1 = new Image("view/images/game-sling1.png");
+      ImageView ivSling1 = new ImageView(sling1);
+      ivSling1.setImage(sling1);
+      ivSling1.setFitWidth(200);
+      ivSling1.setPreserveRatio(true);
+      ivSling1.setTranslateX(210);
+      ivSling1.setTranslateY(328);
+
       Group gameGroup = new Group();
       HBox box = new HBox();
       box.getChildren().add(ivTime);
       box.getChildren().add(ivScore);
       gameGroup.getChildren().add(box);
+      gameGroup.getChildren().add(ivSling1);
 
       AnchorPane root = FXMLLoader.load(getClass().getResource("../../../view/game.fxml"));
       root.getChildren().add(gameGroup);
@@ -85,17 +80,13 @@ public class App extends Application {
       scene.getStylesheets().add("view/styles.css");
       primaryStage.setScene(scene);
 
-      //      Scene scene1 = new Scene(timeScore, 640, 512);
-      //      scene1.setFill(Color.TRANSPARENT);
-      //      startStage.setScene(scene1);
-      //      startStage.show();
     } catch (IOException e) {
       e.printStackTrace();
     }
   }
 
   public void exit() {
-    Platform.exit();
     System.exit(0);
+    Platform.exit();
   }
 }

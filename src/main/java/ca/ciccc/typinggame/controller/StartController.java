@@ -11,37 +11,31 @@ import javafx.scene.control.Button;
 
 public class StartController implements Initializable {
   @FXML private Button startButton; // id
-  @FXML private Button creditsButton; // id
+  @FXML private Button howToPlayButton; // id
   @FXML private javafx.scene.control.Button exitButton; // id
 
   @FXML
-  public void pressStart(ActionEvent actionEvent) {
+  public void pressStart() {
     startButton.getEventDispatcher();
     new App().setGameScene();
   }
 
-  //  startButton.setOnAction(new EventHandler()) {
-  //    @Override
-  //    public void handle(ActionEvent actionEvent) {
-  //      app.setGameScene();
-  //    }
-  //  });
-
   @FXML
-  public void pressCredits() {
-    // TODO: go to credits page
+  public void pressHowToPlay() {
+    howToPlayButton.getEventDispatcher();
+    // TODO: App().HowToPlayScene();
   }
 
   @FXML
   private void pressExit() {
-    Platform.exit();
-    System.exit(0);
+    exitButton.getEventDispatcher();
+    new App().exit();
   }
 
   @Override
   public void initialize(URL location, ResourceBundle resources) {
     startButton = new Button();
-    creditsButton = new Button();
+    howToPlayButton = new Button();
     exitButton = new Button();
   }
 }
