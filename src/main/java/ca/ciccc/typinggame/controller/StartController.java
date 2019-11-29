@@ -23,7 +23,7 @@ public class StartController implements Initializable {
   @FXML
   public void pressHowToPlay() {
     howToPlayButton.getEventDispatcher();
-    // TODO: App().HowToPlayScene();
+    new App().setHowToPlayScene();
   }
 
   @FXML

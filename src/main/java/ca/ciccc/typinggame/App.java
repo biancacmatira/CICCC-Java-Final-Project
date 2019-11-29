@@ -1,12 +1,17 @@
 package ca.ciccc.typinggame;
 
+import java.awt.*;
 import java.io.IOException;
 import javafx.application.Application;
 import javafx.application.Platform;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Insets;
 import javafx.scene.Group;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
@@ -76,6 +81,46 @@ public class App extends Application {
 
       AnchorPane root = FXMLLoader.load(getClass().getResource("../../../view/game.fxml"));
       root.getChildren().add(gameGroup);
+      Scene scene = new Scene(root, 640, 512);
+      scene.getStylesheets().add("view/styles.css");
+      primaryStage.setScene(scene);
+
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+  }
+
+  public void setHowToPlayScene() {
+    try {
+      Image howToPlayImage =
+          new Image(getClass().getResource("../../../view/images/howtoplay.png").toString());
+      ImageView ivHowToPlay = new ImageView(howToPlayImage);
+      ivHowToPlay.setImage(howToPlayImage);
+      ivHowToPlay.setFitWidth(640);
+      ivHowToPlay.setPreserveRatio(true);
+
+      Image mainMenu =
+          new Image(
+              getClass().getResource("../../../view/images/result-btn_mainmenu1.png").toString());
+
+      ImageView ivMainMenu = new ImageView(mainMenu);
+      ivMainMenu.setImage(mainMenu);
+      ivMainMenu.setFitWidth(210);
+      ivMainMenu.setPreserveRatio(true);
+
+      Button mainMenuBtn = new Button();
+      mainMenuBtn.setGraphic(ivMainMenu);
+      mainMenuBtn.setStyle("-fx-background-color: transparent; -fx-text-fill: white;");
+      mainMenuBtn.setPadding(Insets.EMPTY);
+      mainMenuBtn.setTranslateX(210);
+      mainMenuBtn.setTranslateY(335);
+      mainMenuBtn.setOnAction(e -> setStartScene());
+      Group howToPlayGroup = new Group();
+      howToPlayGroup.getChildren().add(ivHowToPlay);
+      howToPlayGroup.getChildren().add(mainMenuBtn);
+
+      AnchorPane root = FXMLLoader.load(getClass().getResource("../../../view/main.fxml"));
+      root.getChildren().add(howToPlayGroup);
       Scene scene = new Scene(root, 640, 512);
       scene.getStylesheets().add("view/styles.css");
       primaryStage.setScene(scene);
